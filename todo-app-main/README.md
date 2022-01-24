@@ -97,3 +97,14 @@ We love receiving feedback! We're always looking to improve our challenges and o
 This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
 **Have fun building!** 🚀
+
+
+--------
+
+## NOTAS DEL DEV 
+
+Hice este ejercicio con ayuda de SortableJS (una libreria para el drag&drop de elementos en HTML), aunque me gustaria hacerlo con js vanilla, pero bueno, por cosa de tiempos use la libreria.
+
+Si queres probar este proyecto tenes que instalar las dependencias que usa el repo padre (https://github.com/NehuenCuenca/frontendMentorChallenges).
+Si ya te bajaste el repo, abris una terminal y te ubicas en la carpeta principal (../frontendMentorChallenges/) y ejecutas el comando "npm i".
+Al momento que realicé estos proyectos, lo que yo usaba para renderizar el programa era la extension de VS Code, 'Live Server', si podes usa eso que con un click ya te levanta un servidor y podes usar el proyecto, sino te gusta, arreglate como gato panza arriba. Salu2
