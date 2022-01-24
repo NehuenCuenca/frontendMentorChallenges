@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body.dark{
+    background-image: url('../images/bg-desktop-dark.jpg');
+    background-size: 100% 230px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: hsl(235, 21%, 11%);
+    color: white;
+}
+
+body.light{
+    background-image: url('../images/bg-desktop-light.jpg');
+    background-size: 100% 230px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: hsl(0, 0%, 98%);
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    color: white;
+}
+
+#btnChangeTheme {
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    width: 50%;
+    /* min-height: 350px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+main.dark{
+    background-color: hsl(235, 24%, 19%);
+    color: white;
+}
+
+main.light{
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+.todoEntry {
+    width: 70%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.todoEntry input[type='text']{
+    height: 40px;
+    width: 100%;
+    font-size: 22px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 25px;
+}
+
+
+ul{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border-top: 2px solid black; */
+    cursor: move;
+}
+
+ul li.selected {
+    /* transform: scale(1.02) rotate(-2deg); */
+    box-shadow: 0px 0px 20px rgba(149, 153, 159, .16);
+    background-color: lightsteelblue;
+}
+
+ul li.ghost {
+    border: 2px dotted black;
+}
+
+ul li.drag {
+    opacity: 0;
+}
+
+
+ul li input[type='checkbox']{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+ul li button {
+    background-color: rgb(255, 77, 77);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main.dark ul li:first-of-type {
+    border-top: 2px solid white;
+}
+main.light ul li:first-of-type {
+    border-top: 2px solid rgb(0, 0, 0);
+}
+
+.footerTodoList{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+main.dark .footerTodoList {
+    border-top: 3px solid white;
+    border-style: dashed none none none;
+}
+
+main.light .footerTodoList {
+    border-top: 3px solid black;
+    border-style: dashed none none none;
+}
+
+#todosLefts{
+    cursor: inherit;
+}
+
+.footerTodoList a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: orange;
+    cursor: pointer;
+}
+.footerTodoList a:hover {
+    font-weight: bold;
+    color: rgb(255, 115, 0);
+    cursor: pointer;
+}
+
+
+ul li h3.checked {
+    text-decoration: line-through;
+    text-decoration-color: red;
+    text-decoration-style: solid;
+    opacity: 0.6;
+}
+
+@media (max-width:1100px) {
+    .footerTodoList{
+        flex-direction: column;
+        height: 200px;
+        justify-content: space-between;
+    }
+}
