@@ -1,6 +1,7 @@
 Orden en que fui avanzando los challenges:
 
-1ro --> faq-accordion-card-main
-2do --> pricing-component-with-toggle-master
-3ro --> todo-app-main (con SortableJS)
-4to --> static-job-listings-master *-EN PROCESO-*
+1ro --> 3-column-preview-card-component-main
+2do --> faq-accordion-card-main
+3ro --> pricing-component-with-toggle-master
+4to --> todo-app-main (con SortableJS)
+5to --> static-job-listings-master *-EN PROCESO-*

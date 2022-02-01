@@ -17,24 +17,18 @@ BTNChangeTheme.textContent= getTheme() == 'dark' ? '🌞' : '🌚'
 
 BTNallTodos.onclick= () => {
     console.log(allTodos);
-    cleanListTodos()
-    showListTodos(allTodos)
-    updateTodosCategorieTitle('All')
+    renderList(allTodos, 'All')
 }
 
 BTNactiveTodos.onclick= () => {
     const activeTodos = allTodos.filter(todo => !todo.children[0].checked)
     console.log(activeTodos);
-    cleanListTodos()
-    showListTodos(activeTodos)
-    updateTodosCategorieTitle('Active')
+    renderList(activeTodos, 'Active')
 }
 
 BTNcompletedTodos.onclick= () => {
     console.log(checkedTodos);
-    cleanListTodos()
-    showListTodos(checkedTodos)
-    updateTodosCategorieTitle('Completed')
+    renderList(checkedTodos, 'Completed')
 }
 
 BTNclearCompletedTodos.onclick= () => {
@@ -62,6 +56,7 @@ const newTodo = document.querySelector('.todoEntry input[type=text]')
 newTodo.addEventListener('keyup', (e) => {
     e.preventDefault();
     if (e.keyCode === 13) {
+        renderList(allTodos, 'All')
         console.log("creando nueva tarea")
         todo = newTodo.value
         createNewTodo(todo)
@@ -94,7 +89,7 @@ function createNewTodo(todo) {
     todoTitle.textContent= todo
 
     const btnDelete = document.createElement('button')
-    btnDelete.textContent= 'X'
+    btnDelete.textContent= '✖'
 
     element.appendChild(checkbox)
     element.appendChild(todoTitle)
@@ -138,8 +133,8 @@ function recordCheckBTN() {
 
 function deleteTodo(todoElement) {
     const indexTodo = allTodos.indexOf(todoElement)
-    allTodos.splice(indexTodo, 1) //elimino del array principal de todos   
-    checkTodo(todoElement, false) // elimino del array de los todos checkeados o completados
+    allTodos.splice(indexTodo, 1) //elimino li del array principal de todos   
+    checkTodo(todoElement, false) // elimino li del array de los todos checkeados o completados
     updateTodoLefts()
     lista.removeChild(todoElement) //elimino el LI de la lista html(UL)
 }
@@ -159,7 +154,6 @@ function checkTodo(todoElement, check) {
     updateTodoLefts()
 }
 
-//MAL HECHO
 function cleanListTodos() {
     lista.childNodes.forEach((li) => {
         setTimeout(() => {
@@ -201,3 +195,9 @@ function updateTodosCategorieTitle(title) {
     titleCategoriesTodos.textContent = title
 }
 
+
+function renderList(list, listTitle) {
+    cleanListTodos()
+    showListTodos(list)
+    updateTodosCategorieTitle(listTitle)
+}

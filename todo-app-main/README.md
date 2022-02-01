@@ -107,4 +107,6 @@ Hice este ejercicio con ayuda de SortableJS (una libreria para el drag&drop de e
 
 Si queres probar este proyecto tenes que instalar las dependencias que usa el repo padre (https://github.com/NehuenCuenca/frontendMentorChallenges).
 Si ya te bajaste el repo, abris una terminal y te ubicas en la carpeta principal (../frontendMentorChallenges/) y ejecutas el comando "npm i".
-Al momento que realicé estos proyectos, lo que yo usaba para renderizar el programa era la extension de VS Code, 'Live Server', si podes usa eso que con un click ya te levanta un servidor y podes usar el proyecto, sino te gusta, arreglate como gato panza arriba. Salu2
+Al momento que realicé estos proyectos, lo que yo usaba para renderizar el programa era la extension de VS Code, 'Live Server', si podes, usá eso, que con un click ya te levanta un servidor y podes usar el proyecto, sino te gusta, arreglate como gato panza arriba. Salu2
+
+AVISO IMPORTANTE: cuando levantas el servidor con Live Server, asegurate de que en VS code estes ubicado en la carpeta raiz a todos los proyectos osea a "../frontendMentorChallenges"

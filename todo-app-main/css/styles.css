@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;1,100;1,700&display=swap');
 
 html, body {
     width: 100%;
@@ -50,6 +49,8 @@ header {
     align-items: center;
     width: 40%;
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 10px;
 }
 
 #btnChangeTheme {
@@ -123,6 +124,12 @@ ul li {
     cursor: move;
 }
 
+ul li h3{
+    font-family: 'Josefin Sans', 'sans-serif';
+    font-weight: 400;   
+    text-transform: capitalize;
+}
+
 ul li.selected {
     /* transform: scale(1.02) rotate(-2deg); */
     box-shadow: 0px 0px 20px rgba(149, 153, 159, .16);
@@ -145,13 +152,18 @@ ul li input[type='checkbox']{
 }
 
 ul li button {
-    background-color: rgb(255, 77, 77);
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    font-weight: bold;
+    background-color: transparent;  
+    border: none;
+    font-size: 22px;
+    font-weight: lighter;
     cursor: pointer;
+}
+
+main.dark ul li button {
+    color: whitesmoke;
+}
+main.light ul li button {
+    color: black;
 }
 
 main.dark ul li:first-of-type {

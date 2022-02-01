@@ -18,22 +18,25 @@ html{
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 20px 20px 20px 20px;
 }
 
 main {
-    width: 50%;
-    height: 40%;
+    width: 500px;
+    /* height: 40%; */
     background-color: bisque;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
+    padding: 10px;
 }
 
 div {
-    width: 150px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     background-color: chocolate;
     padding: 5px;
     display: flex;
@@ -41,7 +44,7 @@ div {
     align-items: center;
 }
 
-div:nth-child(1) {
+/* div:nth-child(1) {
     align-self: flex-start;
 }
 div:nth-child(2) {
@@ -53,4 +56,4 @@ div:nth-child(3) {
 
 div:nth-child(-n + 3){
     font-size: 18px;
-}
+} */

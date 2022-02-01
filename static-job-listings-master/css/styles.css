@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+html, body {
+    width: 100%;
+    /* height: 100%; */
+}
+
+html{
+    box-sizing: border-box;
+    font-family: Spartan, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    /* background-color: lightsalmon; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overflow: scroll; */
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background: url('../images/bg-header-desktop.svg'), no-repeat, top center;
+    background-color: hsl(180, 29%, 50%);
+}
+
+main {
+    width: 95%;
+    min-height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 20px;
+    position: relative;
+    top: -50px;
+}
+
+.jobFilterByTags{
+    width: 90%;
+    min-height: 50px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+
+.tagsColumn{
+    width: 80%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.tagsColumn > button {
+    cursor: default;
+}
+
+.tagsColumn > button.btnTagJob > span{
+    margin-left: 4px;
+    font-size: 20px;
+    background-color: black;
+    border-radius: 5px;
+    padding: 3.5px;
+    color: red;
+    cursor: pointer;
+}
+
+.btnsFilterTag{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#btnClearTags{
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: hsl(180, 29%, 50%);
+    background-color: white;
+    border: none;
+    justify-self: flex-end;
+}
+
+ul.jobList {
+    padding: 0;
+    margin: 0;
+    margin-inline-start: 0;
+    width: 90%;
+    min-height: 300px;
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 20px;
+}
+
+ul.jobList li {
+    width: 100%;
+    height: 120px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 400ms ease-out;
+}
+
+ul.jobList li:hover {
+    border-left: 10px solid hsl(180, 29%, 50%);
+}
+
+.jobInfo{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+
+section{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.rowJobInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .rowJobInfo:nth-child(1) span:nth-child(1){
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+}
+
+.tagInfo{
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.tagInfo.new {
+    background-color: hsl(180, 29%, 50%);
+    color: white
+}
+
+.tagInfo.featured{
+    background-color: black;
+    color: white
+}
+
+section .rowJobInfo:nth-child(2){
+    font-weight: 700;
+}
+
+section .rowJobInfo:nth-child(3){
+    font-size: 13px;
+    font-weight: 700;
+    color: darkgray;
+    font-style: italic;
+}
+
+.jobTags{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.btnTagJob{
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: hsl(180, 25%, 94%);
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btnTagJob:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    transition: 200ms ease-in;
+}
+
