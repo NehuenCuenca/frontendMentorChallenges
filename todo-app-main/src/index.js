@@ -18,27 +18,29 @@ BTNChangeTheme.textContent= getTheme() == 'dark' ? '🌞' : '🌚'
 BTNallTodos.onclick= () => {
     console.log(allTodos);
     renderList(allTodos, 'All')
+    activateBTNListCategorie(BTNallTodos)
 }
 
 BTNactiveTodos.onclick= () => {
     const activeTodos = allTodos.filter(todo => !todo.children[0].checked)
     console.log(activeTodos);
     renderList(activeTodos, 'Active')
+    activateBTNListCategorie(BTNactiveTodos)
 }
 
 BTNcompletedTodos.onclick= () => {
     console.log(checkedTodos);
     renderList(checkedTodos, 'Completed')
+    activateBTNListCategorie(BTNcompletedTodos)
 }
 
 BTNclearCompletedTodos.onclick= () => {
     clearCompletedTodos();
 }
 
-
 BTNChangeTheme.onclick = () => {
-    getTheme() == 'dark' ? changeTheme('light') : changeTheme('dark')
-    BTNChangeTheme.textContent= getTheme() == 'dark' ? '🌞' : '🌚'
+    getTheme() == 'dark' ? changeTheme('light') : changeTheme('dark');
+    BTNChangeTheme.textContent= getTheme() == 'dark' ? '🌞' : '🌚';
 };
 
 function changeTheme(theme){
@@ -57,12 +59,21 @@ newTodo.addEventListener('keyup', (e) => {
     e.preventDefault();
     if (e.keyCode === 13) {
         renderList(allTodos, 'All')
+
         console.log("creando nueva tarea")
         todo = newTodo.value
-        createNewTodo(todo)
-        newTodo.value= ''
-        recordDeleteBTN();
-        recordCheckBTN();
+
+        let validate= validateTodo(todo) 
+        if(validate){
+            console.log("tarea cancelada");
+            alert(`${validate}`)
+        } else {
+            console.log(validate);
+            createNewTodo(todo)
+            newTodo.value= ''
+            recordDeleteBTN();
+            recordCheckBTN();
+        }
     }
 })
 
@@ -76,10 +87,6 @@ Sortable.create(lista, {
 })
 
 function createNewTodo(todo) {
-    if(todo.length==0){
-        return alert("You can't save this, you must write something!")
-    } 
-
     const element = document.createElement('li')
     
     const checkbox = document.createElement('input')
@@ -191,13 +198,29 @@ function clearCompletedTodos() {
     })
 }
 
-function updateTodosCategorieTitle(title) {
-    titleCategoriesTodos.textContent = title
-}
-
-
-function renderList(list, listTitle) {
+function renderList(list) {
     cleanListTodos()
     showListTodos(list)
-    updateTodosCategorieTitle(listTitle)
+}
+
+function activateBTNListCategorie(btn) {
+    let btnActive= document.querySelector('a.selectedList')
+    if(btn == btnActive){
+        return
+    }
+    
+    btnActive.removeAttribute("class");
+    btn.setAttribute("class", "selectedList");
+}
+
+function validateTodo(todo){
+    if(todo.length==0 && todo.trim()==0){
+        return "You can't save this, you must write something!"
+    } 
+
+    if(todo.length >= 40){
+        return "Your todo is too large, shorten it. Max 40 characters"
+    } 
+
+    return ""
 }

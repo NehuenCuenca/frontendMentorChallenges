@@ -68,44 +68,69 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-shadow: 1px 1px 1px 1px gray;
     border-radius: 10px;
     transition: 0.3s;
+    row-gap: 30px;
 }
 
-main.dark{
+.listBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 14px 10px 12px 4px rgba(0,0,0,0.78);
+    -webkit-box-shadow: 14px 10px 12px 4px rgba(0,0,0,0.78);
+    -moz-box-shadow: 14px 10px 12px 4px rgba(0,0,0,0.78);
+}
+
+main.dark .listBlock{
     background-color: hsl(235, 24%, 19%);
     color: white;
 }
 
-main.light{
+main.light .listBlock{
     background-color: hsl(0, 0%, 100%);
     color: black;
 }
 
+
 .todoEntry {
-    width: 70%;
+    width: 100%;
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 .todoEntry input[type='text']{
     height: 40px;
     width: 100%;
     font-size: 22px;
-    border-radius: 10px;
-    border: 1px solid black;
+    border-radius: 5px;
+    border: none;
     text-align: center;
     padding: 25px;
 }
 
+main.dark .todoEntry input[type='text']{
+    background-color: hsl(235, 24%, 19%);
+    color: white;
+}
+main.light .todoEntry input[type='text']{
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+#titleCategoriesTodos{
+    display: none;
+}
 
 ul{
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -120,14 +145,14 @@ ul li {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* border-top: 2px solid black; */
+    border-bottom: 1px solid lightgray;
     cursor: move;
+    padding: 0 10px;
 }
 
 ul li h3{
     font-family: 'Josefin Sans', 'sans-serif';
-    font-weight: 400;   
-    text-transform: capitalize;
+    font-weight: 400;
 }
 
 ul li.selected {
@@ -166,12 +191,6 @@ main.light ul li button {
     color: black;
 }
 
-main.dark ul li:first-of-type {
-    border-top: 2px solid white;
-}
-main.light ul li:first-of-type {
-    border-top: 2px solid rgb(0, 0, 0);
-}
 
 .footerTodoList{
     width: 90%;
@@ -180,35 +199,38 @@ main.light ul li:first-of-type {
     justify-content: space-between;
     align-items: center;
     margin-bottom: auto;
-    margin-top: 30px;
     padding: 20px;
 }
 
-main.dark .footerTodoList {
-    border-top: 3px solid white;
-    border-style: dashed none none none;
-}
-
-main.light .footerTodoList {
-    border-top: 3px solid black;
-    border-style: dashed none none none;
-}
 
 #todosLefts{
     cursor: inherit;
+    font-weight: lighter;
+    opacity: 0.7;
 }
 
 .footerTodoList a {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    color: orange;
     cursor: pointer;
 }
-.footerTodoList a:hover {
+
+main.dark .footerTodoList a {
+    color: white;
+}
+main.light .footerTodoList a {
+    color: black;
+}
+
+main .footerTodoList a:hover {
     font-weight: bold;
-    color: rgb(255, 115, 0);
+    color: hsl(273, 100%, 65%);
     cursor: pointer;
+}
+
+main .footerTodoList a.selectedList {
+    color: hsl(229, 100%, 65%);
 }
 
 
@@ -217,6 +239,7 @@ ul li h3.checked {
     text-decoration-color: red;
     text-decoration-style: solid;
     opacity: 0.6;
+    transition: ease-out 0.8s;
 }
 
 @media (max-width:1100px) {
