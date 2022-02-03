@@ -71,7 +71,7 @@ main {
     cursor: default;
 }
 
-.tagsColumn > button.btnTagJob > span{
+.tagsColumn > .btnTagJob > span{
     margin-left: 4px;
     font-size: 20px;
     background-color: black;
@@ -200,6 +200,10 @@ section .rowJobInfo:nth-child(3){
 }
 
 .btnTagJob{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
     border: none;
     border-radius: 10px;
     padding: 7px;
